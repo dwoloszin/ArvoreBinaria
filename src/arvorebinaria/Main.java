@@ -37,17 +37,22 @@ public class Main {
         System.out.print("]\n");
         
         System.out.print("Ordem visitada: 'PreOrdem' [");
-        arvore.exibePreOrdem(A);//sempre true
+        arvore.exibePreOrdem(A,true);//sempre true
         System.out.print("]\n");
         
         System.out.print("Ordem visitada: 'PosOrdem' [");
-        arvore.exibePosOrdem(A);//sempre true
+        arvore.exibePosOrdem(A,true);//sempre true
         System.out.print("]\n");
+
+        
+    
         
         System.out.println("\nQtd  : " + arvore.getQtd());
         System.out.println("Soma : " + arvore.getSoma());
         System.out.println("Maior: " + arvore.getMaior());
         System.out.println("Menor: " + arvore.getMenor());
+
+        
         
     }
     

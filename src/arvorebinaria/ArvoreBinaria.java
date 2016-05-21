@@ -88,32 +88,55 @@ void exibeEmOrdem (No no, boolean flag) {
     }
 }
 
-void exibePreOrdem (No no) {
+void exibePreOrdem (No no, boolean flag) {
+    if(flag){//zera os valores para nao somar caso seja execultada novamente
+        
+        this.qtd = 0;
+        this.soma = 0;
+        flag = false;
+    }
+    this.qtd += 1;
+        soma += no.getValor();
+        if(no.getValor() > maior)
+            maior = no.getValor();
+
+        if(no.getValor() < menor)
+            menor = no.getValor();
+    
+    
+    
     System.out.print (no.getNome() + ": " + no.getValor()+ ", ");
     if (no.filhoEsq() != null) {
-        exibePreOrdem (no.filhoEsq());
+        exibePreOrdem (no.filhoEsq(),flag);
     }
     if (no.filhoDir() != null) {
-        exibePreOrdem (no.filhoDir());
+        exibePreOrdem (no.filhoDir(),flag);
     }
 }
 
-void exibePosOrdem (No no) {
-    if (no.filhoEsq() != null) {
-        exibePreOrdem (no.filhoEsq());
-    }
-    
-    if (no.filhoDir() != null) {
-        exibePreOrdem (no.filhoDir());
-   }
-        System.out.print (no.getNome() + ": " + no.getValor()+ ", ");
-    
-    
-    
-    
-    
-    
-    
+
+        
+        public void exibePosOrdem(No no, boolean flag) {
+            if(flag){//zera os valores para nao somar caso seja execultada novamente
+                this.qtd = 0;
+                this.soma = 0;
+                flag = false;
+            }
+            if (no != null) {
+                exibePosOrdem(no.filhoEsq(),flag);
+                exibePosOrdem(no.filhoDir(),flag);
+                System.out.print (no.getNome() + ": " + no.getValor()+ ", ");
+                this.qtd += 1;
+                soma += no.getValor();
+                if(no.getValor() > maior)
+                    maior = no.getValor();
+
+                if(no.getValor() < menor)
+                    menor = no.getValor();
+                
+            }
+            
+
 }
 
 
@@ -158,6 +181,7 @@ public int getMaior(){
 public int getMenor(){
     return menor;
 }
+
 
 
 

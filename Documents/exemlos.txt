@@ -1,0 +1,99 @@
+public int contagem(No no){
+    return (no == null) ? 0 : 1 + contagem(no.filhoEsquerdo) + contagem(no.filhoDireito);
+}
+
+
+public void posOrdem(No no) {
+    if (no != null) {
+        posOrdem(no.filhoEsquerdo);
+        posOrdem(no.filhoDireito);
+        System.out.println(no.valor);
+    }
+}
+
+
+public void preOrdem(No no) {
+    if (no != null){
+        System.out.println(no.valor);
+        preOrdem(no.filhoEsquerdo);
+        preOrdem(no.filhoDireito);
+    }
+}
+
+public void emOrdem(No no) {
+    if (no != null) {
+        emOrdem(no.filhoEsquerdo);
+        System.out.println(no.valor);
+        emOrdem(no.filhoDireito);
+    }
+}
+
+
+
+
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package arvorebinaria;
+
+/**
+ *
+ * @author Dwoloszin
+ */
+public class ArvoreBinariaCompleta {
+    
+private int valorNo;
+    private ArvoreBinariaCompleta subarvoreEsquerda;
+    private ArvoreBinariaCompleta subarvoreDireita;
+
+    public ArvoreBinariaCompleta(int valorNo)
+    {
+        this.valorNo = valorNo;
+        this.subarvoreEsquerda = null;
+        this.subarvoreDireita = null;
+    }
+
+    public void InserirItem(int item)
+    {
+         int valorNoAtual = valorNo;
+         if ( item < valorNoAtual )
+         {
+             if (subarvoreEsquerda == null) 
+             {
+                 subarvoreEsquerda = new ArvoreBinariaCompleta(item);
+             }
+             else
+             {
+                 subarvoreEsquerda.InserirItem(item);
+             }
+         }
+         else
+         {
+             if (subarvoreDireita == null)
+             {
+                 subarvoreDireita = new ArvoreBinariaCompleta(item);
+             }
+             else
+             {
+                 subarvoreDireita.InserirItem(item);
+             }
+         }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

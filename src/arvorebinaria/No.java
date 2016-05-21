@@ -11,14 +11,14 @@ package arvorebinaria;
  */
 public class No {
     private int valor;
-    private No anterior;
-    private No proximo;
+    private No filhoEsq;
+    private No filhoDir;
     
     
     
     No (int valor){
-        this.anterior = null;
-        this.proximo = null;
+        this.filhoEsq = null;
+        this.filhoDir = null;
         this.valor = valor;
         
     }
@@ -29,24 +29,21 @@ public class No {
         return valor;
     }
     
-    public No getAnterior(){
-        return anterior;
-    }
-    
-    public No getProximo(){
-        return proximo;
+    public No filhoEsq(){
+        return filhoEsq;
     }
     
     public void inserirValor(int valor){
         this.valor = valor;
     }
+
     
-    public void inserirProximo(No proximo){
-        this.proximo = proximo;
+    public void inserirFilhoEsq(int valor){
+        this.filhoEsq = new No(valor);
     }
     
-    public void inserirAnterior(No anterior){
-        this.anterior = anterior;
+    public void inserirFilhoDir(int valor){
+        this.filhoDir = new No(valor);
     }
     
    

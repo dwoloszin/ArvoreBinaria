@@ -16,21 +16,16 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ArvoreBinaria arvore = new ArvoreBinaria();
-        
-        arvore.inserir(1);
-        arvore.inserir(10);
-        arvore.inserir(3);
-        arvore.inserir(2);
-        arvore.inserir(8);
-        arvore.inserir(98);
-        
-        
-        
-        arvore.printArvore();
-        
-        
-        
+               
+       ArvoreBinaria arvore = new ArvoreBinaria();
+       No raiz;
+       
+       
+       raiz = arvore.inserirNoRaiz(10);
+       No filho1 = arvore.inserirEsquerda(raiz, 20);
+       No filho2 = arvore.inserirEsquerda(filho1, 30);
+       No filho3 = arvore.inserirEsquerda(filho2, 40);
+  
     }
     
 }

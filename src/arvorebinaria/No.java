@@ -13,16 +13,21 @@ public class No {
     private int valor;
     private No filhoEsq;
     private No filhoDir;
+    private char nome;
     
     
     
-    No (int valor){
+    No (int valor, char nome){
         this.filhoEsq = null;
         this.filhoDir = null;
         this.valor = valor;
+        this.nome = nome;
         
     }
     
+    public char getNome(){
+    return nome;
+    }
     
     
     public int getValor(){
@@ -33,18 +38,35 @@ public class No {
         return filhoEsq;
     }
     
+    public No filhoDir(){
+        return filhoDir;
+    }
+    
+    
     public void inserirValor(int valor){
         this.valor = valor;
     }
 
     
-    public void inserirFilhoEsq(int valor){
-        this.filhoEsq = new No(valor);
+    public void inserirFilhoEsq(int valor, char nome){
+        this.filhoEsq = new No(valor,nome);
     }
     
-    public void inserirFilhoDir(int valor){
-        this.filhoDir = new No(valor);
+    public void inserirFilhoDir(int valor, char nome){
+        this.filhoDir = new No(valor, nome);
     }
+    
+    public void removerFilhoEsq(){
+        this.filhoEsq = null;
+        
+    }
+    
+    public void removerFilhoDir(){
+        this.filhoEsq = null;
+        
+    }
+    
+    
     
    
 }
